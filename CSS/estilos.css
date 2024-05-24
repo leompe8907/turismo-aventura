@@ -109,6 +109,11 @@ header{
 .shrink .headerPanel {
     height: 60px;
     padding: 5px;
+
+}
+
+.shrink{
+    background-color: #000000;
 }
 
 .shrink .logo {
