@@ -342,13 +342,13 @@ video{
 }
 
 .overlay .fab {
-    font-size: 2em; /* Tamaño del icono */
+    font-size: 2em; 
 }
 
 .name {
     margin-top: 10px;
     font-size: 1.2em;
-    text-align: center; /* Centrar el texto */
+    text-align: center; 
 }
 
 /* Estilos para el formulario */
@@ -495,7 +495,7 @@ video{
 #b1:hover {
     background-color: gray;
 }
-/* Estilo para mensaje de error */
+
 .warning {
     color: red;
     font-weight: bold;
@@ -503,7 +503,7 @@ video{
     text-align: center;
 }
 
-/* Estilo para mensaje de éxito */
+
 .success {
     color: rgb(112, 133, 112);
     font-weight: bold;
@@ -604,17 +604,17 @@ footer {
     }
   
     .interna {
-      flex-direction: column; /* Switch to column layout for better stacking */
+      flex-direction: column; 
     }
   
     .headerLeft {
-      display: none; /* Hide headerLeft on mobile for a cleaner layout */
+      display: none; 
     }
   
     .logo {
-      width: 200px; /* Adjust logo size for better fit on mobile */
-      height: auto; /* Maintain aspect ratio */
-      margin: 10px auto; /* Center logo vertically */
+      width: 200px; 
+      height: auto; 
+      margin: 10px auto; 
     }
   
     .headerRight {
@@ -631,17 +631,17 @@ footer {
   
     .navMenu ul li {
       margin-right: 10px;
-      width: 100%; /* Make navigation items span the full width */
-      text-align: center; /* Center navigation text */
+      width: 100%; 
+      text-align: center; 
     }
   
     .navMenu ul li button {
-      width: 100%; /* Make buttons span the full width */
-      padding: 10px 0; /* Add some padding for better touch targets */
+      width: 100%; 
+      padding: 10px 0; 
     }
   
     .navMenu ul li a {
-      font-size: 16px; /* Adjust font size for better readability on mobile */
+      font-size: 16px; 
     }
 
     .centerContainer{
