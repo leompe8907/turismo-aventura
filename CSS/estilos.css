@@ -597,6 +597,18 @@ footer {
     font-family: cursive;
 }
 
+@media (max-width: 375px){
+
+    .headerPanel {
+        padding: 0;
+        width: 375px;
+      }
+
+    .CompartirExperiencias{
+        display: none;
+    }
+}
+
 @media (max-width: 430px) {
     .headerPanel {
       padding: 0;
