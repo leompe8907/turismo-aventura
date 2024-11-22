@@ -609,6 +609,9 @@ footer {
     .headerLeft {
         display: none;
     }
+    .navMenu ul li a {
+        font-size: 16px;
+    }
 
     .videoContainer {
         height: 240px;
@@ -633,7 +636,7 @@ footer {
     }
 
     .tituloCompartir .hashtag {
-        font-size: 45px;
+        font-size: 2.5rem;
     }
 
     .tex-nosotros{
