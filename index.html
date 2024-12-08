@@ -49,6 +49,7 @@
         </div>
       </header>
     <main>
+        <div class="mainGeneral">
         <!-- Nosotros -->
         <section id="PageNosotros" class="buttonNosotros">
             <div class="nosotros">
@@ -135,15 +136,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="containerSocial">
-                <div class="galeriContainer">
-                    <div class="gallery"></div>
-                </div>
-            </div>
+            <div class="gallery"></div>
         </section>
 
         <!-- Seccion contacto -->
-        <section id="PageContacto">
+        <section id="PageContacto" class="PageContacto">
             <div class="seccionTituloMedio">
                 <h2 class="titulo"> Contactanos </h2>
             </div>
@@ -206,12 +203,13 @@
                         <div class="formTextArea">
                             <textarea id="mensaje" name="mensaje" placeholder="Indicanos en qué podemos ayudarte y nos ponemos en contacto ..."></textarea>
                         </div>
-                        <input type="button" id="b1" value="Enviar" onclick="validarEnviar()">
+                        <button type="button" id="b1" value="Enviar" onclick="validarEnviar()">enviar</button>
                         <p class="warning" id="warning"></p>
                     </form>
                 </div>
             </div>
         </section>
+        </div>
     </main>
 
     <!-- Footer con enlaces a redes sociales -->

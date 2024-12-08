@@ -1,19 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-body{
+body {
     background-color: #ffffff;
     overflow-x: hidden;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-row-gap: 2px;
+    
 }
 
-header{
+header {
     margin-bottom: 30px;
 }
-
 
 .headerPanel {
     position: fixed;
@@ -22,68 +28,70 @@ header{
     z-index: 1000;
     width: 100%;
     background-color: #3333331b;
-    transition: height 0.3s, padding 0.3s;
-  }
+    transition:
+        height 0.3s,
+        padding 0.3s;
+}
 
-  .interna {
+.interna {
     width: 100%;
     margin: 0 auto;
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+}
 
-  .topNavCont {
+.topNavCont {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-  }
+}
 
-.headerLeft{
+.headerLeft {
     z-index: 100;
     flex: 1;
 }
 
-.logo{
+.logo {
     width: 350px;
     height: 100px;
     margin: 0;
-    transition: height 0.3s, width 0.3s;
+    overflow: hidden;
+    transition:
+        height 0.3s,
+        width 0.3s;
+
 }
 
-.imgLogo{
+.imgLogo {
     height: 100%;
 }
 
-.headerRight{
+.headerRight {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
     flex: 1;
     z-index: 100;
-    padding-right: 45px;
 }
 
-.navMenu ul{
+.navMenu ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.navMenu ul li{
+.navMenu ul li {
     display: inline-block;
     margin-right: 20px;
 }
 
-.navMenu ul li button{
+.navMenu ul li button {
     background-color: #ffffff00;
     border: none;
 }
 
-.navMenu ul li:last-child{
+.navMenu ul li:last-child {
     margin-right: 0;
 }
 
@@ -94,7 +102,7 @@ header{
     transition: font-size 0.3s;
 }
 
-.navMenu ul li a:hover{
+.navMenu ul li a:hover {
     background-color: #ffffff75;
     color: #000000;
     border-radius: 10px;
@@ -109,10 +117,9 @@ header{
 .shrink .headerPanel {
     height: 60px;
     padding: 5px;
-
 }
 
-.shrink{
+.shrink {
     background-color: #00000093;
 }
 
@@ -125,20 +132,104 @@ header{
     font-size: 16px;
 }
 
-
-.videoContainer{
+.videoContainer {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-video{
+video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 2;
 }
+
+main {
+    grid-area: 2/1/3/2;
+}
+
+.mainGeneral {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0px;
+    grid-template-areas:
+        "buttonNosotros"
+        "experiencias"
+        "CompartirExperiencias"
+        "PageContacto";
+}
+
+.nosotros {
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    max-width: 1240px;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: auto 1fr;
+}
+
+.tex-nosotros {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    padding: 0px 35px;
+    background: #ffffff00;
+}
+
+.tittle-text-nosotros {
+    margin-bottom: 20px;
+}
+
+.tittle-text-nosotros span {
+    font-family: "Poppins";
+    font-size: 45px;
+    color: blue;
+    letter-spacing: 1px;
+    line-height: 0.8em;
+    transform: translateX(-20px);
+}
+
+.tittle-text-nosotros p {
+    font-size: 80px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.content-nosotros {
+    width: 100%;
+}
+
+.content-nosotros430 p {
+    display: none;
+}
+
+.content-nosotros p,
+.content-nosotros430 p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 28px;
+    margin-bottom: 30px;
+    text-rendering: optimizeLegibility;
+}
+
+.img-nosotros {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    padding: 0 20px 0 40px;
+    background: transparent;
+}
+
+.img-nosotros img {
+    position: relative;
+    width: 100%;
+    max-width: 622px;
+    display: block;
+}
+
+/*  */
 
 /* Estilos específicos de las tarjetas */
 .experiencias {
@@ -150,7 +241,7 @@ video{
     flex-direction: column;
 }
 
-.seccionTituloMedio{
+.seccionTituloMedio {
     margin: 20px;
 }
 
@@ -160,7 +251,8 @@ video{
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
-    height: 100vh;
+    height: 1080px;
+    overflow: hidden;
 }
 
 .evento {
@@ -225,7 +317,7 @@ video{
 
 /* Estilos para el compartir */
 
-.tituloCompartir{
+.tituloCompartir {
     background-image: url(/assets/compartir/lightblue-bg-burst-parallax.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -238,29 +330,31 @@ video{
     justify-content: center;
 }
 
-.tituloCompartir .title{
+.tituloCompartir .title {
     display: block;
     color: #fff;
-    font-family: 'lfm_fontregular';
+    font-family: "lfm_fontregular";
     margin-bottom: 10px;
     font-size: 40px;
     line-height: 1em;
     letter-spacing: 1px;
     text-align: center;
+    overflow: hidden;
 }
 
-.tituloCompartir .hashtag{
+.tituloCompartir .hashtag {
     display: block;
     color: #fff;
-    font-family: 'Inter';
+    font-family: "Inter";
     margin-bottom: 10px;
     font-size: 100px;
     font-weight: 600;
     line-height: 1em;
     letter-spacing: 6px;
+    overflow: hidden;
 }
 
-.socialLinks{
+.socialLinks {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -270,7 +364,7 @@ video{
     list-style: none;
 }
 
-.socialLinks .socialNetwork{
+.socialLinks .socialNetwork {
     padding: 0 0.5rem;
     margin: 10px;
     width: 50px;
@@ -283,41 +377,38 @@ video{
     cursor: pointer;
 }
 
-.socialLinks a{
+.socialLinks a {
     color: white;
 }
 /*  */
-
-.containerSocial{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    margin-top: 20px;
+    overflow: hidden;
 }
 
 .image-container {
     position: relative;
-    width: 200px; 
-    height: 200px; 
-    overflow: hidden; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease; 
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .image-container:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .gallery-img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .overlay {
@@ -328,13 +419,13 @@ video{
     right: 0;
     opacity: 0;
     transition: opacity 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     color: white;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .image-container:hover .overlay {
@@ -342,59 +433,80 @@ video{
 }
 
 .overlay .fab {
-    font-size: 2em; 
+    font-size: 2em;
 }
 
 .name {
     margin-top: 10px;
     font-size: 1.2em;
-    text-align: center; 
+    text-align: center;
 }
 
 /* Estilos para el formulario */
 
-#PageContacto{
+#PageContacto {
     width: 100%;
-    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
-.seccionTituloMedio{
+.seccionTituloMedio {
     height: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.titulo{
+.titulo {
     text-align: center;
 }
 
-.generalForm{
-    display: flex;
-    height: 92%;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
+.generalForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px; /* Añade espacio entre columnas y filas */
+    justify-content: space-between;
+    justify-items: center;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
+    height: auto;
 }
-.formImagenLateral, .form{
+
+.formImagenLateral,
+.containerForm {
+    height: auto; /* Ajusta automáticamente las alturas */
+}
+
+.formImagenLateral{
+    overflow: hidden;
+    height: auto; /* Ajusta automáticamente según el contenido */
+    max-height: 100%;
+}
+.formImagenLateral,
+.form {
     width: 45%;
     height: 100%;
     text-align: center;
 }
 
-.imagenLateral{
-    height: 100%;
+.imagenLateral {
+    width: 100%;
+    height: auto; /* Permite que la imagen sea responsiva */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
 }
 
-.containerForm{
+.containerForm {
     height: 100%;
     width: 45%;
 }
 
-.containerForm form{
-    height: 61vh;
+.containerForm form {
+    overflow: visible; /* Cambia hidden por visible */
+    height: auto;
+    margin: 0 auto; /* Centra el formulario */
+    width: 100%; /* Asegura que no se desborde */
 }
 
 .form {
@@ -423,6 +535,7 @@ video{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin: 10px 0;
 }
 
 .actividades {
@@ -465,7 +578,7 @@ video{
     font-weight: bold;
 }
 
-.formTextArea{
+.formTextArea {
     height: 47%;
     width: 100%;
     margin-bottom: 20px;
@@ -483,7 +596,7 @@ video{
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #C99E10 ;
+    background-color: #c99e10;
     color: black;
     border: none;
     border-radius: 5px;
@@ -503,7 +616,6 @@ video{
     text-align: center;
 }
 
-
 .success {
     color: rgb(112, 133, 112);
     font-weight: bold;
@@ -513,142 +625,230 @@ video{
 
 /* ---------------------------------------------------------- */
 
-
-.nosotros{
-    margin: 0 auto;
-    display: grid;
-    align-items: center;
-    max-width: 1240px;
-    grid-template-columns: 45% 55%;
-    grid-template-rows: auto 1fr;
-}
-
-.tex-nosotros{
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-    padding: 0px 35px;
-    background: #ffffff00;
-}
-
-.tittle-text-nosotros{
-    margin-bottom: 20px;
-}
-
-.tittle-text-nosotros span{
-    display: block;
-    font-family: 'Poppins';
-    font-size: 45px;
-    color: blue;
-    letter-spacing: 1px;
-    line-height: .8em;
-    transform: translateX(-20px);
-}
-
-.tittle-text-nosotros p{
-    font-size: 80px;
-    font-weight: 800;
-    margin-bottom: 30px;
-}
-
-.content-nosotros{
-    width: 100%;
-}
-
-.content-nosotros p, .content-nosotros430 p {
-    font-size: 16px;
-    font-weight: 500;
-    font-family: inherit;
-    line-height: 28px;
-    margin-bottom: 30px;
-    text-rendering: optimizeLegibility;
-}
-
-.content-nosotros430 p{
-    display: none;
-}
-
-
-.img-nosotros{
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 2;
-    padding: 0 20px 0 40px;
-    background: transparent;
-}
-
-.img-nosotros img{
-    position: relative;
-    width: 100%;
-    max-width: 622px;
-    display: block;
-}
-
-
-/*  */
-
 footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #5a5a5a; 
-    color: #fff; 
+    background-color: #5a5a5a;
+    color: #fff;
     padding: 20px;
     text-align: center;
     font-family: cursive;
 }
 
-@media (max-width: 375px){
+@media (max-width: 375px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-row-gap: 2px;
+    }
 
-    .headerPanel {
-        padding: 0;
-        width: 375px;
-      }
+    .containerHeader {
+        grid-area: 1/1/2/2;
+        margin-bottom: auto;
+    }
 
-    .CompartirExperiencias{
+    .headerLeft {
         display: none;
+    }
+
+    .headerRight {
+        display: block;
+    }
+
+    .navMenu ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navMenu ul li a {
+        font-size: 15px;
+    }
+
+    .shrink .navMenu ul li a {
+        font-size: 14px;
+    }
+
+    main {
+        grid-area: 2/1/3/2;
+    }
+
+    .mainGeneral {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 0px;
+        grid-template-areas:
+            "buttonNosotros"
+            "experiencias"
+            "CompartirExperiencias"
+            "PageContacto";
+    }
+    .buttonNosotros {
+        grid-area: buttonNosotros;
+    }
+    .tex-nosotros {
+        grid-column: 1 / span 2;
+    }
+    .img-nosotros {
+        display: none;
+    }
+
+    .tittle-text-nosotros span {
+        transform: none;
+    }
+
+    .tittle-text-nosotros,
+    .tittle-text-nosotros p {
+        margin: 0;
+    }
+
+    .content-nosotros {
+        display: none;
+    }
+
+    .content-nosotros430,
+    .content-nosotros430 p {
+        display: block;
+    }
+    .experiencias {
+        grid-area: experiencias;
+        margin: 0;
+    }
+    .CompartirExperiencias {
+        grid-area: CompartirExperiencias;
+    }
+
+    .tituloCompartir{
+        min-height:350px
+    }
+
+    .tituloCompartir .title{
+        overflow: hidden;
+    }
+
+    .tituloCompartir .hashtag{
+        font-size: 35px;
+        overflow: hidden;
+    }
+    .gallery{
+        margin: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+        overflow: hidden;
+    }
+    .image-container{
+        width: 150px;
+        height: 150px;
+    }
+    .PageContacto {
+        grid-area: PageContacto;
+        overflow: hidden;
+        height: auto;
+    }
+    .generalForm{
+        width: auto;
+        height: 32em;
+    }
+    .containerForm{
+        grid-column: 1 / span 2;
+        width: auto;
+        overflow: hidden;
+    }
+    .containerForm form{
+        height: auto;
+    }
+    .form-control{
+        margin: 5px;
+    }
+    .actividades{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .formTextArea{
+        height: auto;
+    }
+    .formTextArea textarea{
+        height: auto;
+        overflow: hidden;
+        font-size: small;
+    }
+    .formImagenLateral{
+        display: none;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .contentRedes p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .socialLinks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    .socialLinks .socialNetwork {
+        width: 40px; 
+        height: 40px;
+        line-height: 38px;
+    }
+
+    .seccioniframe iframe {
+        width: 100%; 
+        max-width: 300px;
+        height: auto;
     }
 }
 
-@media (max-width: 430px) {
-    .headerPanel {
-      padding: 0;
-      width: 425px;
+@media (min-width: 320px) and (max-width: 480px) {
+    body{
+        grid-row-gap: 20px;
     }
-  
-    .interna {
-      flex-direction: column; 
+    .containerHeader{
+        grid-area: 1 / 1 / 2 / 2;
+        margin: auto;
     }
-  
     .headerLeft {
       display: none; 
     }
-  
-    .logo {
-      width: 200px; 
-      height: auto; 
-      margin: 10px auto; 
-    }
-  
     .headerRight {
-      padding-right: 10px;
-    }
-
-    .navMenu{
-        width: 100%;
+      padding: 0 10px;
     }
 
     .navMenu ul{
-        display: flex;
-    }
-  
-    .navMenu ul li {
-      margin-right: 10px;
-      width: 100%; 
-      text-align: center; 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0;
+        justify-items: center;
+        align-items: center;
+        height: 60px;
+        transition: 0.2s;
     }
   
     .navMenu ul li button {
-      width: 100%; 
       padding: 10px 0; 
     }
   
@@ -656,23 +856,37 @@ footer {
       font-size: 16px; 
     }
 
-    .centerContainer{
-        width: 430px;
+    .shrink .navMenu ul {
+        overflow: hidden;
+        transition: 0.2s;
+        height: 20px;
+    }
+
+    .shrink .navMenu ul li a {
+        font-size: 14px;
     }
 
     .videoContainer{
         height: 240px;
     }
 
+    main {
+        grid-area: 2/1/3/2;
+    }
+
+    .mainGeneral{
+        gap: 20px;
+    }
+
     .nosotros{
         display: block;
     }
 
-    .content-nosotros p{
+    .content-nosotros{
         display: none;
     }
     
-    .content-nosotros430 p{
+    .content-nosotros430{
         display: block;
         text-align: justify;
     }
@@ -681,20 +895,89 @@ footer {
         display: none;
     }
 
-    .tituloCompartir{
-        min-height:350px
+    .tittle-text-nosotros span {
+        transform: none;
     }
 
-    .tituloCompartir .hashtag{
-        font-size: 45px;
+    .tittle-text-nosotros,
+    .tittle-text-nosotros p {
+        margin: 0;
+    }
+
+    .content-nosotros {
+        display: none;
+    }
+
+    .content-nosotros430,
+    .content-nosotros430 p {
+        display: block;
+    }
+
+    .experiencias {
+        grid-area: experiencias;
+        margin: 0;
+    }
+
+    .CompartirExperiencias {
+        grid-area: CompartirExperiencias;
+    }
+
+    .tituloCompartir {
+        min-height: 350px;
+    }
+
+    .tituloCompartir .title {
+        overflow: hidden;
+    }
+
+    .tituloCompartir .hashtag {
+        font-size: 35px;
+        overflow: hidden;
+    }
+
+    .socialLinks .socialNetwork{
+        overflow: hidden;
+    }
+
+    .gallery {
+        margin: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        justify-items: center;
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    .image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .PageContacto {
+        grid-area: PageContacto;
+        overflow: hidden;
+        height: auto;
     }
 
     .formImagenLateral{
         display: none;
     }
 
-    .containerForm{
-        width: 100%;
+    .generalForm {
+        width: auto;
+        height: 40em;
+
+    }
+
+    .containerForm {
+        grid-column: 1 / span 2;
+        width: auto;
+        overflow: hidden;
+    }
+
+    .containerForm form {
+        height: auto;
     }
 
     .actividades{
@@ -705,94 +988,47 @@ footer {
         margin: 25px;
     }
 
-    .containerForm{
-        height: 100vh;
-    }
-
     .containerForm form{
-        height: 50%;
+        height: auto;
     }
 
-    footer{
+    footer {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 10px; /* Añade espacio entre las secciones */
+        grid-area: 3 / 1 / 3 / 3;
     }
 
-    .shrink .headerPanel {
-        height: 60px;
-        padding: 5px;
+    .contentRedes p {
+        font-size: 14px; /* Ajusta el tamaño del texto */
+        margin-bottom: 10px;
     }
+
+    .socialLinks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .socialLinks .socialNetwork {
+        width: 40px; /* Reduce el tamaño de los íconos */
+        height: 40px;
+        line-height: 38px;
+    }
+
+    .seccioniframe iframe {
+        width: 100%; /* Hace que el iframe sea responsivo */
+        max-width: 300px; /* Ajusta el tamaño máximo */
+        height: auto;
+    }
+
 }
-  
 
+@media (min-width: 431px) and (max-width: 768px){
 
-@media (max-width: 768px) {
-    .headerPanel {
-      padding: 0;
-    }
-  
-    .logo {
-      width: 250px;
-      height: 80px;
-    }
-  
-    .headerRight {
-      padding-right: 10px;
-    }
-  
-    .navMenu ul li {
-      margin-right: 10px;
-    }
-  
-    .navMenu ul li a {
-      font-size: 14px;
-    }
-
-  
-  .shrink .headerPanel {
-    height: 60px;
-    padding: 5px;
-  }
-  
-  .shrink .logo {
-    height: 60px;
-    width: 200px;
-  }
-  
-  .shrink .navMenu ul li a {
-    font-size: 16px;
-  }
-  
-  .videoContainer {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 2;
-  }
-
-  .img-nosotros{
-    display: none;
-  }
-
-  .tex-nosotros{
-    grid-column: 1 / span 2;
-  }
-
-  .content-nosotros p{
-    text-align: justify;
-  }
-
-  .formImagenLateral{
-    display: none;
-  }
-
-  .containerForm{
-    width: 100%;
-  }
 }
