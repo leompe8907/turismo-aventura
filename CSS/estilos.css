@@ -30,12 +30,12 @@ body {
     line-height: 1.6;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-column-gap: 0px;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas: 
     "header"
     "main"
-    "footer"; 
+    "footer";
+    
 }
 
 /* HEADER Y NAVEGACIÓN */
@@ -96,11 +96,13 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    justify-items: center;
+    justify-items: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
     gap: 15px;
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 100%; /* Asegurar que ocupe toda la altura disponible */
 }
 
 .navMenu ul li a {
@@ -110,6 +112,8 @@ header {
     transition: all var(--transition-speed) ease;
     text-decoration: none;
     position: relative;
+    display: flex; /* Para centrar el texto dentro del enlace */
+    align-items: center; /* Centrado vertical dentro del enlace */
 }
 
 .navMenu ul li a::after {
@@ -127,10 +131,18 @@ header {
     width: 100%;
 }
 
+.videoContainer {
+    position: relative;
+    width: 100%;
+    height: auto; /* Cambiar a auto para que se ajuste al contenido */
+    min-height: 100vh; /* Mantener un mínimo en pantallas grandes */
+    overflow: hidden;
+}
+
 /* DISEÑO DE SCROLL */
 
 .shrink .headerPanel {
-    height: 60px;
+    height: var(--header-height-shrink);
     padding: 5px;
 }
 
@@ -165,8 +177,9 @@ video {
 /* FIN DE HEADER */
 
 /* SECCIÓN MAIN */
-main{
+main {
     grid-area: main;
+    min-height: calc(100vh - var(--header-height)); /* Asegurar que ocupe el espacio restante */
 }
 
 .mainGeneral {
@@ -702,12 +715,23 @@ footer {
     }
 }
 
-@media (min-width: 376px) and (max-width: 430px) {
+@media (min-width: 374px) and (max-width: 430px) {
     body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
         grid-row-gap: 2px;
+    }
+
+    .nosotros {
+        display: block; /* Cambiar a block para simplificar */
+        grid-template-columns: 1fr; /* Forzar una sola columna */
+        padding: 0; /* Eliminar padding innecesario */
+        margin: 0; /* Eliminar márgenes */
+    }
+
+    .videoContainer {
+        min-height: 50vh; /* Reducir altura en pantallas pequeñas */
     }
 
     .containerHeader {
@@ -729,11 +753,13 @@ footer {
         grid-template-rows: 1fr;
         gap: 0;
         justify-items: center;
-        align-items: center;
+        align-items: center; /* Centrado vertical */
+        height: 100%; /* Asegurar que ocupe toda la altura */
     }
 
     .navMenu ul li a {
         font-size: 15px;
+        padding: 5px; /* Reducir padding para pantallas pequeñas */
     }
 
     .shrink .navMenu ul li a {
@@ -761,7 +787,8 @@ footer {
     }
 
     .tex-nosotros {
-        grid-column: 1 / span 2;
+        grid-column: auto; /* Resetear */
+        padding: 20px; /* Padding mínimo */
     }
 
     .img-nosotros {
@@ -772,9 +799,9 @@ footer {
         transform: none;
     }
 
-    .tittle-text-nosotros,
+    .tittle-text-nosotros span,
     .tittle-text-nosotros p {
-        margin: 0;
+        margin: 10px 0; /* Ajustar márgenes internos */
     }
 
     .content-nosotros {
@@ -784,6 +811,10 @@ footer {
     .content-nosotros430,
     .content-nosotros430 p {
         display: block;
+    }
+
+    .content-nosotros430 p {
+        margin-bottom: 15px; /* Reducir espacio entre párrafos */
     }
 
     .experiencias {
